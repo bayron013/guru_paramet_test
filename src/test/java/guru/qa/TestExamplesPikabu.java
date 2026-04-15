@@ -1,15 +1,12 @@
 package guru.qa;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selenide.$;
-
 public class TestExamplesPikabu extends TestBase {
 
-    @Test
     @ValueSource(strings = {"Политика", "Игры", "Юмор"
 //            , "Отношения", "Здоровье",
 //            "Путешествия", "Спорт", "Хобби", "Сервис", "Природа", "Бизнес", "Транспорт",
@@ -23,8 +20,9 @@ public class TestExamplesPikabu extends TestBase {
                 .goToTemesMenu()
                 .openTopic(topic);
 
-        $(".story__header").$(".story__topic").$("[span='" + topic + "']").shouldHave(text(topic));
-
+//        $(".story__header").$(".story__topic").$("[span='" + topic + "']").shouldHave(text(topic));
+        String title = testData.getTitle();
+        Assertions.assertEquals(topic, title);
 
 
     }

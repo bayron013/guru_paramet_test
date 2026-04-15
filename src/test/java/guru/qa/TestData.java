@@ -1,5 +1,7 @@
 package guru.qa;
 
+import com.codeborne.selenide.Selenide;
+
 import static com.codeborne.selenide.Selectors.byAttribute;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
@@ -14,11 +16,11 @@ public class TestData {
     }
 
     public TestData goToTemesMenu() {
-        $(".header-menu__extra").click();
-        $(".popup__wrapper").$("a[href='/themes']").click();
+//        $(".header-menu__extra").click();
+//        $(".popup__wrapper").$("a[href='/themes']").click();
 
 //        Альтернативный способ решения (для обучения)
-//        Selenide.executeJavaScript("document.querySelector('a[href=\"/themes\"]').click()");
+        Selenide.executeJavaScript("document.querySelector('a[href=\"/themes\"]').click()");
 
         return this;
     }
@@ -29,4 +31,8 @@ public class TestData {
         return this;
     }
 
+    public String getTitle() {
+        String val = $(".story__main").$(".story__topic span").getText();
+        return val;
+    }
 }
