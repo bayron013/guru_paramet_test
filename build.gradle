@@ -20,4 +20,7 @@ tasks.withType(JavaCompile) {
 
 test {
     useJUnitPlatform()
+//            {
+//        includeTags 'TOPICS | GENERAL'
+//    }
 }

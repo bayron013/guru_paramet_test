@@ -1,10 +1,10 @@
 package guru.qa;
 
-import com.codeborne.selenide.Selenide;
+import java.util.ArrayList;
+import java.util.List;
 
 import static com.codeborne.selenide.Selectors.byAttribute;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.*;
 
 public class TestData {
 
@@ -15,12 +15,12 @@ public class TestData {
         return this;
     }
 
-    public TestData goToTemesMenu() {
-//        $(".header-menu__extra").click();
-//        $(".popup__wrapper").$("a[href='/themes']").click();
+    public TestData goToThemesMenu() {
+        $(".header-menu__extra").click();
+        $(".popup__wrapper").$("a[href='/themes']").click();
 
 //        Альтернативный способ решения (для обучения)
-        Selenide.executeJavaScript("document.querySelector('a[href=\"/themes\"]').click()");
+//        Selenide.executeJavaScript("document.querySelector('a[href=\"/themes\"]').click()");
 
         return this;
     }
@@ -35,4 +35,14 @@ public class TestData {
         String val = $(".story__main").$(".story__topic span").getText();
         return val;
     }
+
+    public List<String> getHeaderMenu() {
+        List<String> menuList = new ArrayList<>($$(".header-menu a").texts());
+
+        return menuList;
+    }
+
+
 }
+
+
