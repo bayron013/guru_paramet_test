@@ -6,16 +6,22 @@ import java.util.List;
 import static com.codeborne.selenide.Selectors.byAttribute;
 import static com.codeborne.selenide.Selenide.*;
 
-public class TestData {
+public class TestPages {
 
 
-    public TestData openPage() {
-        open("");
+    public TestPages openPagePikabu() {
+        open("https://pikabu.ru/");
 
         return this;
     }
 
-    public TestData goToThemesMenu() {
+    public TestPages openPageScrolls() {
+        open("https://demoqa.com/automation-practice-form");
+
+        return this;
+    }
+
+    public TestPages goToThemesMenu() {
         $(".header-menu__extra").click();
         $(".popup__wrapper").$("a[href='/themes']").click();
 
@@ -25,7 +31,7 @@ public class TestData {
         return this;
     }
 
-    public TestData openTopic(String themes) {
+    public TestPages openTopic(String themes) {
         $(".page-topics__topics").$(byAttribute("alt", themes)).click();
 
         return this;
