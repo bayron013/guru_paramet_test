@@ -67,7 +67,7 @@ public class TestExamplesDataProvider {
             "На форме подтверждения регистрации должны отображаться имя {0} и фамилия {1} пользователя (CsvSource)")
     void confirmCorrectNameAndSurnameOnTable(String name, String surName) {
 
-        testData.openPageScrolls();
+        testData.openPageTests();
         $("#firstName").setValue(name);
         $("#lastName").setValue(surName);
         $("#genterWrapper").$(byText("Other")).click();
@@ -84,7 +84,7 @@ public class TestExamplesDataProvider {
             "и фамилия {1} пользователя (CsvFileSource)")
     void confirmCorrectNameAndSurnameOnTableCsv(String name, String surName) {
 
-        testData.openPageScrolls();
+        testData.openPageTests();
         $("#firstName").setValue(name);
         $("#lastName").setValue(surName);
         $("#genterWrapper").$(byText("Other")).click();

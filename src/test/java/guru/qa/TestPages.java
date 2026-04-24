@@ -15,7 +15,7 @@ public class TestPages {
         return this;
     }
 
-    public TestPages openPageScrolls() {
+    public TestPages openPageTests() {
         open("https://demoqa.com/automation-practice-form");
 
         return this;
