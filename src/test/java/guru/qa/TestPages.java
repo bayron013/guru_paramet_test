@@ -17,6 +17,10 @@ public class TestPages {
 
     public TestPages openPageTests() {
         open("https://demoqa.com/automation-practice-form");
+        executeJavaScript("""
+            document.getElementById('fixedban')?.remove();
+            document.querySelector('footer')?.remove();
+            """);
 
         return this;
     }
